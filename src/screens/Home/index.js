@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import { Text } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 
-import { styles, Container, Logo, Button } from "./styles";
+import { styles, Container, Logo, LogoText, Button } from "./styles";
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      initialColor: "red",
-      finalColor: "blue",
+      initialColor: "#FF0000",
+      finalColor: "#000FFF",
       lastChar: null,
       secondToLastChar: null
     };
@@ -49,7 +49,7 @@ export default class Home extends Component {
 
     this.setState({
       initialColor: listOfColours[lastChar],
-      finalColor: listOfColours[secondToLastChar],
+      finalColor: listOfColours[secondToLastChar]
     });
   }
 
@@ -62,7 +62,10 @@ export default class Home extends Component {
         end={{ x: 0.5, y: 1.0 }}
       >
         <Container>
-          <Logo>go4All</Logo>
+          <Logo>
+            <LogoText>Go 4all</LogoText>
+          </Logo>
+
           <Button onPress={() => this.changeColor()}>
             <Text style={styles.buttonText}>Trocar cores</Text>
           </Button>
